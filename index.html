@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TailwindCSS v4 Cheat Sheet</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <div class="flex">
+        <aside class="w-72 h-screen sticky top-0 overflow-y-auto bg-white border-r border-gray-200 p-4 text-sm">
+            <nav class="space-y-1">
+                <div class="font-semibold text-xs text-gray-400 uppercase mb-2">Components</div>
+                <a
+                    href="#accordion"
+                    class="block hover:text-gray-900"
+                >Accordion</a>
+                <a
+                    href="#alerts"
+                    class="block hover:text-gray-900"
+                >Alerts</a>
+                <a
+                    href="#badge"
+                    class="block hover:text-gray-900"
+                >Badge</a>
+                <a
+                    href="#breadcrumb"
+                    class="block hover:text-gray-900"
+                >Breadcrumb</a>
+                <a
+                    href="#buttons"
+                    class="block hover:text-gray-900"
+                >Buttons</a>
+                <a
+                    href="#cards"
+                    class="block hover:text-gray-900"
+                >Card</a>
+                <a
+                    href="#modal"
+                    class="block hover:text-gray-900"
+                >Modal</a>
+                <a
+                    href="#navbar"
+                    class="block hover:text-gray-900"
+                >Navbar</a>
+                <a
+                    href="#pagination"
+                    class="block hover:text-gray-900"
+                >Pagination</a>
+                <a
+                    href="#tables"
+                    class="block hover:text-gray-900"
+                >Tables</a>
+                <a
+                    href="#tabs"
+                    class="block hover:text-gray-900"
+                >Tabs</a>
+                <a
+                    href="#toast"
+                    class="block hover:text-gray-900"
+                >Toast</a>
+
+                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 mb-2">Forms</div>
+                <a
+                    href="#form-input"
+                    class="block hover:text-gray-900"
+                >Input</a>
+                <a
+                    href="#form-search"
+                    class="block hover:text-gray-900"
+                >Search</a>
+                <a
+                    href="#form-select"
+                    class="block hover:text-gray-900"
+                >Select</a>
+                <a
+                    href="#form-checkbox"
+                    class="block hover:text-gray-900"
+                >Checkbox</a>
+                <a
+                    href="#form-toggle"
+                    class="block hover:text-gray-900"
+                >Toggle</a>
+
+                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 mb-2">Typography</div>
+                <a
+                    href="#typography-headings"
+                    class="block hover:text-gray-900"
+                >Headings</a>
+                <a
+                    href="#typography-text"
+                    class="block hover:text-gray-900"
+                >Text</a>
+                <a
+                    href="#typography-lists"
+                    class="block hover:text-gray-900"
+                >Lists</a>
+                <a
+                    href="#typography-blockquote"
+                    class="block hover:text-gray-900"
+                >Blockquote</a>
+                <a
+                    href="#typography-hr"
+                    class="block hover:text-gray-900"
+                >HR</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-10 space-y-24">
+            <div class="w-full mb-8">
+                <h2 class="text-3xl font-semibold">TailwindCSS v4 Cheat Sheet</h2>
+            </div>
+
+            <section
+                id="accordion"
+                class="space-y-6"
+            >
+                <h2 class="text-2xl font-semibold">Accordion</h2>
+                <div class="border rounded-md divide-y bg-white">
+                    <div class="p-4 font-medium">Section title</div>
+                    <div class="p-4 text-sm text-gray-600">Accordion content</div>
+                </div>
+            </section>
+
+            <section
+                id="alerts"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Alerts</h2>
+                <div class="p-4 rounded-md bg-blue-50 text-blue-700">Info alert</div>
+                <div class="p-4 rounded-md bg-green-50 text-green-700">Success alert</div>
+                <div class="p-4 rounded-md bg-red-50 text-red-700">Error alert</div>
+            </section>
+
+            <section
+                id="badge"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Badge</h2>
+                <div class="flex gap-2">
+                    <span class="px-2 py-1 text-xs rounded bg-gray-200">Neutral</span>
+                    <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-700">Success</span>
+                    <span class="px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-700">Warning</span>
+                    <span class="px-2 py-1 text-xs rounded bg-red-100 text-red-700">Error</span>
+                </div>
+            </section>
+
+            <section
+                id="breadcrumb"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Breadcrumb</h2>
+                <nav class="flex items-center gap-2 text-sm text-gray-600">
+                    <span>Home</span>
+                    <span>/</span>
+                    <span>Inventory</span>
+                    <span>/</span>
+                    <span class="font-medium text-gray-900">Product</span>
+                </nav>
+            </section>
+
+            <section
+                id="buttons"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Buttons</h2>
+                <div class="flex gap-3 flex-wrap">
+                    <button class="px-4 py-2 rounded bg-gray-900 text-white">Primary</button>
+                    <button class="px-4 py-2 rounded border">Secondary</button>
+                    <button
+                        class="px-4 py-2 rounded text-gray-500 border"
+                        disabled
+                    >Disabled</button>
+                    <button class="px-3 py-2 rounded border">Icon</button>
+                </div>
+            </section>
+
+            <section
+                id="cards"
+                class="space-y-6"
+            >
+                <h2 class="text-2xl font-semibold">Card</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border rounded-lg p-6 bg-white">
+                        <div class="font-medium mb-1">Card title</div>
+                        <div class="text-sm text-gray-600">Simple card content</div>
+                    </div>
+                    <div class="border rounded-lg bg-white">
+                        <div class="p-4 border-b font-medium">Header</div>
+                        <div class="p-4 text-sm text-gray-600">Card with header</div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="modal"
+                class="space-y-6"
+            >
+                <h2 class="text-2xl font-semibold">Modal</h2>
+                <div class="max-w-md border rounded-lg bg-white">
+                    <div class="p-4 border-b font-medium">Modal title</div>
+                    <div class="p-4 text-sm text-gray-600">Modal body content</div>
+                    <div class="p-4 border-t flex justify-end gap-2">
+                        <button class="px-3 py-1 border rounded">Cancel</button>
+                        <button class="px-3 py-1 bg-gray-900 text-white rounded">Confirm</button>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="navbar"
+                class="space-y-6"
+            >
+                <h2 class="text-2xl font-semibold">Navbar</h2>
+                <div class="flex items-center justify-between border rounded p-4 bg-white">
+                    <div class="font-medium">Brand</div>
+                    <div class="flex gap-4 text-sm text-gray-600">
+                        <span>Dashboard</span>
+                        <span>Products</span>
+                        <span>Settings</span>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="pagination"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Pagination</h2>
+                <div class="flex gap-1 text-sm">
+                    <button class="px-3 py-1 border rounded">Prev</button>
+                    <button class="px-3 py-1 border rounded bg-gray-900 text-white">1</button>
+                    <button class="px-3 py-1 border rounded">2</button>
+                    <button class="px-3 py-1 border rounded">Next</button>
+                </div>
+            </section>
+
+            <section
+                id="tables"
+                class="space-y-6"
+            >
+                <h2 class="text-2xl font-semibold">Tables</h2>
+                <table class="w-full border text-sm bg-white">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-2 border text-left">Name</th>
+                            <th class="p-2 border text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2 border">Item A</td>
+                            <td class="p-2 border">Active</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-2 border">Item B</td>
+                            <td class="p-2 border">Inactive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section
+                id="tabs"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Tabs</h2>
+                <div class="flex gap-6 border-b">
+                    <span class="pb-2 border-b-2 border-gray-900 font-medium">Overview</span>
+                    <span class="pb-2 text-gray-500">Details</span>
+                    <span class="pb-2 text-gray-500">Settings</span>
+                </div>
+            </section>
+
+            <section
+                id="toast"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Toast</h2>
+                <div class="px-4 py-3 rounded bg-gray-900 text-white w-max">
+                    Action completed successfully
+                </div>
+            </section>
+
+            <section
+                id="form-input"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Input Field</h2>
+                <input
+                    class="w-full border rounded px-3 py-2"
+                    placeholder="Default input"
+                />
+                <input
+                    class="w-full border border-red-300 rounded px-3 py-2"
+                    placeholder="Error input"
+                />
+            </section>
+
+            <section
+                id="form-search"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Search Input</h2>
+                <input
+                    class="w-full border rounded px-3 py-2"
+                    placeholder="Search..."
+                />
+            </section>
+
+            <section
+                id="form-select"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Select</h2>
+                <select class="w-full border rounded px-3 py-2">
+                    <option>Option one</option>
+                    <option>Option two</option>
+                </select>
+            </section>
+
+            <section
+                id="form-checkbox"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Checkbox</h2>
+                <label class="flex items-center gap-2 text-sm">
+                    <input
+                        type="checkbox"
+                        class="rounded"
+                    />
+                    Accept terms
+                </label>
+            </section>
+
+            <section
+                id="form-toggle"
+                class="space-y-4"
+            >
+                <h2 class="text-2xl font-semibold">Toggle</h2>
+                <div class="w-10 h-6 rounded-full bg-gray-300 relative">
+                    <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5"></div>
+                </div>
+            </section>
+
+            <section
+                id="typography-headings"
+                class="space-y-2"
+            >
+                <h2 class="text-2xl font-semibold">Headings</h2>
+                <h1 class="text-4xl font-bold">Heading 1</h1>
+                <h2 class="text-3xl font-semibold">Heading 2</h2>
+                <h3 class="text-xl font-medium">Heading 3</h3>
+            </section>
+
+            <section
+                id="typography-text"
+                class="space-y-2"
+            >
+                <h2 class="text-2xl font-semibold">Text</h2>
+                <p class="text-base">Default text</p>
+                <p class="text-sm text-gray-600">Muted text</p>
+                <p class="text-sm font-medium">Emphasized text</p>
+            </section>
+
+            <section
+                id="typography-lists"
+                class="space-y-2"
+            >
+                <h2 class="text-2xl font-semibold">Lists</h2>
+                <ul class="list-disc pl-5 text-sm">
+                    <li>List item one</li>
+                    <li>List item two</li>
+                </ul>
+            </section>
+
+            <section
+                id="typography-blockquote"
+                class="space-y-2"
+            >
+                <h2 class="text-2xl font-semibold">Blockquote</h2>
+                <blockquote class="border-l-4 pl-4 text-gray-600">
+                    Example blockquote text
+                </blockquote>
+            </section>
+
+            <section
+                id="typography-hr"
+                class="space-y-2"
+            >
+                <h2 class="text-2xl font-semibold">HR</h2>
+                <hr class="border-gray-300" />
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>
