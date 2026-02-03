@@ -115,13 +115,36 @@
         <main class="flex-1 p-10 space-y-24">
             <div class="w-full mb-8">
                 <h2 class="text-3xl font-semibold">TailwindCSS v4 Cheat Sheet</h2>
+                <div class="mt-6 space-y-3">
+                    <label class="text-sm font-medium text-gray-700">Generate a component prompt</label>
+                    <textarea
+                        id="gpt-component-prompt"
+                        class="w-full min-h-[120px] border rounded-lg px-3 py-2 text-sm"
+                        placeholder="Describe the component you want to generate..."
+                    ></textarea>
+                    <button
+                        type="button"
+                        class="px-4 py-2 rounded bg-gray-900 text-white text-sm"
+                        onclick="openComponentPrompt()"
+                    >
+                        Generate component
+                    </button>
+                </div>
             </div>
 
             <section
                 id="accordion"
                 class="space-y-6"
             >
-                <h2 class="text-2xl font-semibold">Accordion</h2>
+                <h2 class="text-2xl font-semibold">
+                    Accordion
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="border rounded-md divide-y bg-white">
                     <div class="p-4 font-medium">Section title</div>
                     <div class="p-4 text-sm text-gray-600">Accordion content</div>
@@ -132,7 +155,15 @@
                 id="alerts"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Alerts</h2>
+                <h2 class="text-2xl font-semibold">
+                    Alerts
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="p-4 rounded-md bg-blue-50 text-blue-700">Info alert</div>
                 <div class="p-4 rounded-md bg-green-50 text-green-700">Success alert</div>
                 <div class="p-4 rounded-md bg-red-50 text-red-700">Error alert</div>
@@ -142,7 +173,15 @@
                 id="badge"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Badge</h2>
+                <h2 class="text-2xl font-semibold">
+                    Badge
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="flex gap-2">
                     <span class="px-2 py-1 text-xs rounded bg-gray-200">Neutral</span>
                     <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-700">Success</span>
@@ -155,7 +194,15 @@
                 id="breadcrumb"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Breadcrumb</h2>
+                <h2 class="text-2xl font-semibold">
+                    Breadcrumb
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <nav class="flex items-center gap-2 text-sm text-gray-600">
                     <span>Home</span>
                     <span>/</span>
@@ -169,7 +216,15 @@
                 id="buttons"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Buttons</h2>
+                <h2 class="text-2xl font-semibold">
+                    Buttons
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="flex gap-3 flex-wrap">
                     <button class="px-4 py-2 rounded bg-gray-900 text-white">Primary</button>
                     <button class="px-4 py-2 rounded border">Secondary</button>
@@ -185,7 +240,15 @@
                 id="cards"
                 class="space-y-6"
             >
-                <h2 class="text-2xl font-semibold">Card</h2>
+                <h2 class="text-2xl font-semibold">
+                    Card
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="border rounded-lg p-6 bg-white">
                         <div class="font-medium mb-1">Card title</div>
@@ -202,7 +265,15 @@
                 id="modal"
                 class="space-y-6"
             >
-                <h2 class="text-2xl font-semibold">Modal</h2>
+                <h2 class="text-2xl font-semibold">
+                    Modal
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="max-w-md border rounded-lg bg-white">
                     <div class="p-4 border-b font-medium">Modal title</div>
                     <div class="p-4 text-sm text-gray-600">Modal body content</div>
@@ -217,7 +288,15 @@
                 id="navbar"
                 class="space-y-6"
             >
-                <h2 class="text-2xl font-semibold">Navbar</h2>
+                <h2 class="text-2xl font-semibold">
+                    Navbar
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="flex items-center justify-between border rounded p-4 bg-white">
                     <div class="font-medium">Brand</div>
                     <div class="flex gap-4 text-sm text-gray-600">
@@ -232,7 +311,15 @@
                 id="pagination"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Pagination</h2>
+                <h2 class="text-2xl font-semibold">
+                    Pagination
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="flex gap-1 text-sm">
                     <button class="px-3 py-1 border rounded">Prev</button>
                     <button class="px-3 py-1 border rounded bg-gray-900 text-white">1</button>
@@ -245,7 +332,15 @@
                 id="tables"
                 class="space-y-6"
             >
-                <h2 class="text-2xl font-semibold">Tables</h2>
+                <h2 class="text-2xl font-semibold">
+                    Tables
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <table class="w-full border text-sm bg-white">
                     <thead class="bg-gray-100">
                         <tr>
@@ -270,7 +365,15 @@
                 id="tabs"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Tabs</h2>
+                <h2 class="text-2xl font-semibold">
+                    Tabs
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="flex gap-6 border-b">
                     <span class="pb-2 border-b-2 border-gray-900 font-medium">Overview</span>
                     <span class="pb-2 text-gray-500">Details</span>
@@ -282,7 +385,15 @@
                 id="toast"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Toast</h2>
+                <h2 class="text-2xl font-semibold">
+                    Toast
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="px-4 py-3 rounded bg-gray-900 text-white w-max">
                     Action completed successfully
                 </div>
@@ -292,7 +403,15 @@
                 id="form-input"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Input Field</h2>
+                <h2 class="text-2xl font-semibold">
+                    Input Field
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <input
                     class="w-full border rounded px-3 py-2"
                     placeholder="Default input"
@@ -307,7 +426,15 @@
                 id="form-search"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Search Input</h2>
+                <h2 class="text-2xl font-semibold">
+                    Search Input
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <input
                     class="w-full border rounded px-3 py-2"
                     placeholder="Search..."
@@ -318,7 +445,15 @@
                 id="form-select"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Select</h2>
+                <h2 class="text-2xl font-semibold">
+                    Select
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <select class="w-full border rounded px-3 py-2">
                     <option>Option one</option>
                     <option>Option two</option>
@@ -329,7 +464,15 @@
                 id="form-checkbox"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Checkbox</h2>
+                <h2 class="text-2xl font-semibold">
+                    Checkbox
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <label class="flex items-center gap-2 text-sm">
                     <input
                         type="checkbox"
@@ -343,7 +486,15 @@
                 id="form-toggle"
                 class="space-y-4"
             >
-                <h2 class="text-2xl font-semibold">Toggle</h2>
+                <h2 class="text-2xl font-semibold">
+                    Toggle
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <div class="w-10 h-6 rounded-full bg-gray-300 relative">
                     <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5"></div>
                 </div>
@@ -353,7 +504,15 @@
                 id="typography-headings"
                 class="space-y-2"
             >
-                <h2 class="text-2xl font-semibold">Headings</h2>
+                <h2 class="text-2xl font-semibold">
+                    Headings
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <h1 class="text-4xl font-bold">Heading 1</h1>
                 <h2 class="text-3xl font-semibold">Heading 2</h2>
                 <h3 class="text-xl font-medium">Heading 3</h3>
@@ -363,7 +522,15 @@
                 id="typography-text"
                 class="space-y-2"
             >
-                <h2 class="text-2xl font-semibold">Text</h2>
+                <h2 class="text-2xl font-semibold">
+                    Text
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <p class="text-base">Default text</p>
                 <p class="text-sm text-gray-600">Muted text</p>
                 <p class="text-sm font-medium">Emphasized text</p>
@@ -373,7 +540,15 @@
                 id="typography-lists"
                 class="space-y-2"
             >
-                <h2 class="text-2xl font-semibold">Lists</h2>
+                <h2 class="text-2xl font-semibold">
+                    Lists
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <ul class="list-disc pl-5 text-sm">
                     <li>List item one</li>
                     <li>List item two</li>
@@ -384,7 +559,15 @@
                 id="typography-blockquote"
                 class="space-y-2"
             >
-                <h2 class="text-2xl font-semibold">Blockquote</h2>
+                <h2 class="text-2xl font-semibold">
+                    Blockquote
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <blockquote class="border-l-4 pl-4 text-gray-600">
                     Example blockquote text
                 </blockquote>
@@ -394,12 +577,37 @@
                 id="typography-hr"
                 class="space-y-2"
             >
-                <h2 class="text-2xl font-semibold">HR</h2>
+                <h2 class="text-2xl font-semibold">
+                    HR
+                    <a
+                        class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Generate a similar component with GPT</a>
+                </h2>
                 <hr class="border-gray-300" />
             </section>
 
         </main>
     </div>
+    <script>
+        const gptComponentBaseUrl =
+            'https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent';
+
+        const openComponentPrompt = () => {
+            const promptField = document.getElementById('gpt-component-prompt');
+            const promptValue = promptField?.value?.trim();
+
+            if (!promptValue) {
+                alert('Please add a prompt before generating a component.');
+                return;
+            }
+
+            const url = `${gptComponentBaseUrl}?prompt=${encodeURIComponent(promptValue)}`;
+            window.open(url, '_blank', 'noopener');
+        };
+    </script>
 </body>
 
 </html>
