@@ -1683,7 +1683,7 @@
         </main>
     </div>
     <script>
-        window.temporaryChat = window?.temporaryChat ?? Boolean(Number(localStorage.getItem('gptTempPrompt') ?? 0));
+        window.temporaryChat = window?.temporaryChat ?? Boolean(Number(localStorage.getItem('gptTempPrompt') ?? 1));
 
         const props = [
             'temporary-chat=true',
