@@ -9,7 +9,10 @@
         content="width=device-width, initial-scale=1"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+        src="//unpkg.com/alpinejs"
+        defer
+    ></script>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
@@ -66,7 +69,7 @@
                     class="block hover:text-gray-900"
                 >Toast</a>
 
-                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 mb-2">Forms</div>
+                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 pt-4 mb-2">Forms</div>
                 <a
                     href="#form-input"
                     class="block hover:text-gray-900"
@@ -88,7 +91,7 @@
                     class="block hover:text-gray-900"
                 >Toggle</a>
 
-                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 mb-2">Typography</div>
+                <div class="font-semibold text-xs text-gray-400 uppercase mt-6 pt-4 mb-2">Typography</div>
                 <a
                     href="#typography-headings"
                     class="block hover:text-gray-900"
@@ -115,20 +118,71 @@
         <main class="flex-1 p-10 space-y-24">
             <div class="w-full mb-8">
                 <h2 class="text-3xl font-semibold">TailwindCSS v4 Cheat Sheet</h2>
+
+                <div class="fixed w-48 h-12 right-0 bottom-0 bg-gray-100 p-2 pt-3 rounded-tl">
+                    <div class="flex flex-wrap items-center justify-end gap-12">
+                        <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                            <input
+                                type="checkbox"
+                                class="peer sr-only"
+                                data-el-id="gpt-temp-prompt"
+                            />
+                            <div
+                                class="peer h-7 w-12 rounded-full bg-slate-300 ring-offset-1 transition-colors duration-200 peer-checked:bg-indigo-600 peer-focus:ring-0 peer-focus:ring-indigo-500">
+                            </div>
+                            <span
+                                class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                            ></span>
+                            Temporary chat
+                        </label>
+                    </div>
+                </div>
+
                 <div class="mt-6 space-y-3">
-                    <label class="text-sm font-medium text-gray-700">Generate a component prompt</label>
+                    <label class="text-sm font-medium text-gray-700">Generate a component prompt using AI✨</label>
                     <textarea
-                        id="gpt-component-prompt"
+                        data-el-id="gpt-component-prompt"
                         class="w-full min-h-[120px] border rounded-lg px-3 py-2 text-sm"
                         placeholder="Describe the component you want to generate..."
                     ></textarea>
-                    <button
-                        type="button"
-                        class="px-4 py-2 rounded bg-gray-900 text-white text-sm"
-                        onclick="openComponentPrompt()"
-                    >
-                        Generate component
-                    </button>
+
+                    <div class="w-full flex">
+                        <div class="w-full md:w-4/5 select-none">
+                            <button
+                                type="button"
+                                class="px-2 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-600 text-sm"
+                                onclick="setExamplePrompt(`Generare a input component`)"
+                            >
+                                ✨ Generare a input component
+                            </button>
+
+                            <button
+                                type="button"
+                                class="px-2 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-600 text-sm"
+                                onclick="setExamplePrompt(`Generare a button component`)"
+                            >
+                                ✨ Generare a button component
+                            </button>
+
+                            <button
+                                type="button"
+                                class="px-2 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-600 text-sm"
+                                onclick="setExamplePrompt(`Generare a outlined button component`)"
+                            >
+                                ✨ Generare a outlined button component
+                            </button>
+                        </div>
+
+                        <div class="flex w-full md:w-1/5 md:justify-end">
+                            <button
+                                type="button"
+                                class="px-4 py-2 rounded bg-gray-900 text-white text-sm"
+                                onclick="openComponentPrompt()"
+                            >
+                                Generate component
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -140,7 +194,7 @@
                     Accordion
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Accordion"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -159,14 +213,93 @@
                     Alerts
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Alerts"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="p-4 rounded-md bg-blue-50 text-blue-700">Info alert</div>
-                <div class="p-4 rounded-md bg-green-50 text-green-700">Success alert</div>
-                <div class="p-4 rounded-md bg-red-50 text-red-700">Error alert</div>
+                <div class="p-6 space-y-4">
+                    <!-- Info Alert -->
+                    <div class="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4">
+                        <div class="mt-1 h-4 w-4 flex-shrink-0 rounded-full border border-gray-300"></div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-gray-900">
+                                Information
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-600">
+                                Your monthly usage report is now available to view and download.
+                            </p>
+                        </div>
+                        <button class="text-sm text-gray-500 hover:text-gray-700">
+                            Dismiss
+                        </button>
+                    </div>
+
+                    <!-- Success Alert -->
+                    <div class="flex items-start gap-4 rounded-lg border border-green-200 bg-green-50 p-4">
+                        <div class="mt-1 h-4 w-4 flex-shrink-0 rounded-full bg-green-500"></div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-green-900">
+                                Payment successful
+                            </h3>
+                            <p class="mt-1 text-sm text-green-800">
+                                Invoice INV-10234 has been paid successfully.
+                            </p>
+                        </div>
+                        <button class="text-sm text-green-700 hover:text-green-900">
+                            View invoice
+                        </button>
+                    </div>
+
+                    <!-- Warning Alert -->
+                    <div class="flex items-start gap-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+                        <div class="mt-1 h-4 w-4 flex-shrink-0 rounded-full bg-amber-400"></div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-amber-900">
+                                Action required
+                            </h3>
+                            <p class="mt-1 text-sm text-amber-800">
+                                Your payment method will expire in 7 days. Please update it to avoid service disruption.
+                            </p>
+                        </div>
+                        <button class="text-sm text-amber-700 hover:text-amber-900">
+                            Update
+                        </button>
+                    </div>
+
+                    <!-- Error Alert -->
+                    <div class="flex items-start gap-4 rounded-lg border border-red-200 bg-red-50 p-4">
+                        <div class="mt-1 h-4 w-4 flex-shrink-0 rounded-full bg-red-500"></div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-red-900">
+                                Payment failed
+                            </h3>
+                            <p class="mt-1 text-sm text-red-800">
+                                We were unable to process the last transaction. Please try again or use a different
+                                payment method.
+                            </p>
+                        </div>
+                        <button class="text-sm text-red-700 hover:text-red-900">
+                            Retry
+                        </button>
+                    </div>
+
+                    <!-- Disabled Alert -->
+                    <div class="flex items-start gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 opacity-60">
+                        <div class="mt-1 h-4 w-4 flex-shrink-0 rounded-full border border-gray-300"></div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-gray-700">
+                                Notifications paused
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Alerts are currently disabled for this project.
+                            </p>
+                        </div>
+                        <button class="text-sm text-gray-400 cursor-not-allowed">
+                            Enable
+                        </button>
+                    </div>
+                </div>
             </section>
 
             <section
@@ -177,7 +310,7 @@
                     Badge
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Badge"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -198,18 +331,105 @@
                     Breadcrumb
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Breadcrumb"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <nav class="flex items-center gap-2 text-sm text-gray-600">
-                    <span>Home</span>
-                    <span>/</span>
-                    <span>Inventory</span>
-                    <span>/</span>
-                    <span class="font-medium text-gray-900">Product</span>
-                </nav>
+                <div class="flex">
+                    <nav
+                        class="bg-white border border-gray-200 rounded-lg px-4 py-3"
+                        aria-label="Breadcrumb"
+                    >
+                        <ol class="flex items-center space-x-2 text-sm">
+                            <li class="flex items-center text-gray-500 hover:text-gray-900 cursor-pointer">
+                                <svg
+                                    class="h-4 w-4 mr-1"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h4m10-11v10a1 1 0 01-1 1h-4m-6 0h6"
+                                    />
+                                </svg>
+                                Home
+                            </li>
+
+                            <li class="text-gray-400">
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </li>
+
+                            <li class="flex items-center text-gray-500 hover:text-gray-900 cursor-pointer">
+                                <svg
+                                    class="h-4 w-4 mr-1"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M20 13V7a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4m16 0H4"
+                                    />
+                                </svg>
+                                Inventory
+                            </li>
+
+                            <li class="text-gray-400">
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </li>
+
+                            <li
+                                class="flex items-center font-medium text-gray-900"
+                                aria-current="page"
+                            >
+                                <svg
+                                    class="h-4 w-4 mr-1"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M12 4v16m8-8H4"
+                                    />
+                                </svg>
+                                New Product
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
             </section>
 
             <section
@@ -220,20 +440,190 @@
                     Buttons
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Buttons"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="flex gap-3 flex-wrap">
-                    <button class="px-4 py-2 rounded bg-gray-900 text-white">Primary</button>
-                    <button class="px-4 py-2 rounded border">Secondary</button>
-                    <button
-                        class="px-4 py-2 rounded text-gray-500 border"
-                        disabled
-                    >Disabled</button>
-                    <button class="px-3 py-2 rounded border">Icon</button>
+                <div class="p-6 bg-white space-y-10">
+
+                    <!-- Solid Buttons -->
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold text-gray-900">
+                            Solid Buttons
+                        </h3>
+
+                        <div class="flex flex-wrap gap-4">
+
+                            <!-- Success -->
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 active:bg-green-800"
+                            >
+                                Success
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 active:bg-green-800"
+                            >
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M5 13l4 4L19 7"
+                                    />
+                                </svg>
+                                Success
+                            </button>
+
+                            <!-- Info -->
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 active:bg-blue-800"
+                            >
+                                Info
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 active:bg-blue-800"
+                            >
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M12 18a6 6 0 100-12 6 6 0 000 12z"
+                                    />
+                                </svg>
+                                Info
+                            </button>
+
+                            <!-- Error -->
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 active:bg-red-800"
+                            >
+                                Error
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 active:bg-red-800"
+                            >
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+                                Error
+                            </button>
+
+                            <!-- Danger -->
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 active:bg-amber-800"
+                            >
+                                Danger
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 active:bg-amber-800"
+                            >
+                                <svg
+                                    class="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                    />
+                                </svg>
+                                Danger
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Outlined Buttons -->
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold text-gray-900">
+                            Outlined Buttons
+                        </h3>
+
+                        <div class="flex flex-wrap gap-4">
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md border border-green-600 px-4 py-2 text-sm font-medium text-green-700 hover:bg-green-50 active:bg-green-100"
+                            >
+                                Success
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md border border-blue-600 px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50 active:bg-blue-100"
+                            >
+                                Info
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md border border-red-600 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 active:bg-red-100"
+                            >
+                                Error
+                            </button>
+
+                            <button
+                                class="inline-flex items-center gap-2 rounded-md border border-amber-600 px-4 py-2 text-sm font-medium text-amber-700 hover:bg-amber-50 active:bg-amber-100"
+                            >
+                                Danger
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Disabled Buttons -->
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold text-gray-900">
+                            Disabled Buttons
+                        </h3>
+
+                        <div class="flex flex-wrap gap-4">
+
+                            <button
+                                disabled
+                                class="inline-flex items-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed"
+                            >
+                                Disabled
+                            </button>
+
+                            <button
+                                disabled
+                                class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+                            >
+                                Disabled Outline
+                            </button>
+
+                        </div>
+                    </div>
+
                 </div>
+
             </section>
 
             <section
@@ -244,20 +634,82 @@
                     Card
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Card"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border rounded-lg p-6 bg-white">
-                        <div class="font-medium mb-1">Card title</div>
-                        <div class="text-sm text-gray-600">Simple card content</div>
+                <div class="p-8 space-y-12">
+
+                    <!-- Card: Header + Body + Footer -->
+                    <div class="rounded-lg border border-gray-200 bg-white">
+                        <div class="border-b border-gray-200 px-6 py-4">
+                            <h3 class="text-sm font-semibold text-gray-900">
+                                Card with Header and Footer
+                            </h3>
+                        </div>
+
+                        <div class="px-6 py-5">
+                            <p class="text-sm text-gray-700">
+                                This card includes a header section, a main content area, and a footer for actions or
+                                metadata.
+                            </p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-3 border-t border-gray-200 px-6 py-4">
+                            <button class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
+                                Cancel
+                            </button>
+                            <button
+                                class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-800"
+                            >
+                                Save
+                            </button>
+                        </div>
                     </div>
-                    <div class="border rounded-lg bg-white">
-                        <div class="p-4 border-b font-medium">Header</div>
-                        <div class="p-4 text-sm text-gray-600">Card with header</div>
+
+                    <!-- Card: Header + Body -->
+                    <div class="rounded-lg border border-gray-200 bg-white">
+                        <div class="border-b border-gray-200 px-6 py-4">
+                            <h3 class="text-sm font-semibold text-gray-900">
+                                Card with Header
+                            </h3>
+                        </div>
+
+                        <div class="px-6 py-5">
+                            <p class="text-sm text-gray-700">
+                                This card includes a header and content area, but no footer section.
+                            </p>
+                        </div>
                     </div>
+
+                    <!-- Card: Body + Footer -->
+                    <div class="rounded-lg border border-gray-200 bg-white">
+                        <div class="px-6 py-5">
+                            <p class="text-sm text-gray-700">
+                                This card contains content and a footer, but does not include a header.
+                            </p>
+                        </div>
+
+                        <div class="flex items-center justify-between border-t border-gray-200 px-6 py-4">
+                            <span class="text-xs text-gray-500">
+                                Last updated 2 days ago
+                            </span>
+                            <button
+                                class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-800"
+                            >
+                                View
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card: Body Only -->
+                    <div class="rounded-lg border border-gray-200 bg-white px-6 py-5">
+                        <p class="text-sm text-gray-700">
+                            This is a simple card with only a content area. Useful for lightweight information blocks.
+                        </p>
+                    </div>
+
                 </div>
             </section>
 
@@ -269,7 +721,7 @@
                     Modal
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Modal"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -292,7 +744,7 @@
                     Navbar
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Navbar"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -315,16 +767,219 @@
                     Pagination
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Pagination"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="flex gap-1 text-sm">
-                    <button class="px-3 py-1 border rounded">Prev</button>
-                    <button class="px-3 py-1 border rounded bg-gray-900 text-white">1</button>
-                    <button class="px-3 py-1 border rounded">2</button>
-                    <button class="px-3 py-1 border rounded">Next</button>
+                <div class="p-8 space-y-12">
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3">
+                            <!-- Results summary -->
+                            <p class="text-sm text-gray-600">
+                                Showing <span class="font-medium text-gray-900">21–30</span> of
+                                <span class="font-medium text-gray-900">128</span> results
+                            </p>
+
+                            <!-- Pagination controls -->
+                            <nav
+                                class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2"
+                                aria-label="Pagination"
+                            >
+
+                                <!-- Previous -->
+                                <button
+                                    class="inline-flex items-center rounded-md px-2 py-2 text-sm text-gray-600 hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-400"
+                                    disabled
+                                >
+                                    <svg
+                                        class="h-4 w-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 19l-7-7 7-7"
+                                        />
+                                    </svg>
+                                </button>
+
+                                <!-- Page numbers -->
+                                <button
+                                    class="inline-flex h-9 w-9 items-center justify-center rounded-md text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                    1
+                                </button>
+
+                                <button
+                                    class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gray-900 text-sm font-medium text-white"
+                                >
+                                    2
+                                </button>
+
+                                <button
+                                    class="inline-flex h-9 w-9 items-center justify-center rounded-md text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                    3
+                                </button>
+
+                                <span class="px-1 text-sm text-gray-400">
+                                    …
+                                </span>
+
+                                <button
+                                    class="inline-flex h-9 w-9 items-center justify-center rounded-md text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                    10
+                                </button>
+
+                                <!-- Next -->
+                                <button
+                                    class="inline-flex items-center rounded-md px-2 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        class="h-4 w-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"
+                                        />
+                                    </svg>
+                                </button>
+
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Size Variants -->
+                    <div class="space-y-6">
+                        <h3 class="text-sm font-semibold text-gray-900">
+                            Pagination Sizes
+                        </h3>
+
+                        <!-- Small -->
+                        <div class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button class="h-7 w-7 rounded-md text-xs text-gray-600 hover:bg-gray-100">
+                                1
+                            </button>
+                            <button class="h-7 w-7 rounded-md bg-gray-900 text-xs font-medium text-white">
+                                2
+                            </button>
+                            <button class="h-7 w-7 rounded-md text-xs text-gray-600 hover:bg-gray-100">
+                                3
+                            </button>
+                        </div>
+
+                        <!-- Medium -->
+                        <div class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                1
+                            </button>
+                            <button class="h-9 w-9 rounded-md bg-gray-900 text-sm font-medium text-white">
+                                2
+                            </button>
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                3
+                            </button>
+                        </div>
+
+                        <!-- Large -->
+                        <div class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button class="h-11 w-11 rounded-md text-base text-gray-700 hover:bg-gray-100">
+                                1
+                            </button>
+                            <button class="h-11 w-11 rounded-md bg-gray-900 text-base font-medium text-white">
+                                2
+                            </button>
+                            <button class="h-11 w-11 rounded-md text-base text-gray-700 hover:bg-gray-100">
+                                3
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Common Pagination with Previous / Next -->
+                    <div class="space-y-6">
+                        <h3 class="text-sm font-semibold text-gray-900">
+                            Pagination with Previous & Next
+                        </h3>
+
+                        <!-- Example 1 -->
+                        <nav class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button
+                                disabled
+                                class="rounded-md px-2 py-2 text-sm text-gray-400 cursor-not-allowed"
+                            >
+                                Previous
+                            </button>
+
+                            <button class="h-9 w-9 rounded-md bg-gray-900 text-sm font-medium text-white">
+                                1
+                            </button>
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                2
+                            </button>
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                3
+                            </button>
+
+                            <button class="rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Next
+                            </button>
+                        </nav>
+
+                        <!-- Example 2 -->
+                        <nav class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button class="rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Previous
+                            </button>
+
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                4
+                            </button>
+                            <button class="h-9 w-9 rounded-md bg-gray-900 text-sm font-medium text-white">
+                                5
+                            </button>
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                6
+                            </button>
+
+                            <button class="rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Next
+                            </button>
+                        </nav>
+
+                        <!-- Example 3 -->
+                        <nav class="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2">
+                            <button class="rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Previous
+                            </button>
+
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                9
+                            </button>
+                            <button class="h-9 w-9 rounded-md text-sm text-gray-700 hover:bg-gray-100">
+                                10
+                            </button>
+                            <button class="h-9 w-9 rounded-md bg-gray-900 text-sm font-medium text-white">
+                                11
+                            </button>
+
+                            <button
+                                disabled
+                                class="rounded-md px-2 py-2 text-sm text-gray-400 cursor-not-allowed"
+                            >
+                                Next
+                            </button>
+                        </nav>
+                    </div>
                 </div>
             </section>
 
@@ -336,29 +991,110 @@
                     Tables
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Tables"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <table class="w-full border text-sm bg-white">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="p-2 border text-left">Name</th>
-                            <th class="p-2 border text-left">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="p-2 border">Item A</td>
-                            <td class="p-2 border">Active</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="p-2 border">Item B</td>
-                            <td class="p-2 border">Inactive</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="flex">
+                    <div class="w-full max-w-6xl">
+                        <div class="bg-white border border-gray-200 rounded-lg">
+                            <div class="px-6 py-4 border-b border-gray-200">
+                                <h2 class="text-lg font-semibold text-gray-900">Invoices</h2>
+                                <p class="mt-1 text-sm text-gray-500">Recent billing activity</p>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full border-collapse">
+                                    <thead>
+                                        <tr class="bg-gray-50 text-left text-sm font-medium text-gray-600">
+                                            <th class="px-6 py-3">Invoice</th>
+                                            <th class="px-6 py-3">Customer</th>
+                                            <th class="px-6 py-3">Date</th>
+                                            <th class="px-6 py-3">Status</th>
+                                            <th class="px-6 py-3 text-right">Amount</th>
+                                            <th class="px-6 py-3 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200 text-sm">
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-gray-900">INV-00124</td>
+                                            <td class="px-6 py-4 text-gray-700">Acme Corp</td>
+                                            <td class="px-6 py-4 text-gray-600">Jan 12, 2026</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700"
+                                                >
+                                                    Paid
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right font-medium text-gray-900">$4,800.00</td>
+                                            <td class="px-6 py-4 text-right">
+                                                <button class="text-sm font-medium text-gray-600 hover:text-gray-900">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-gray-900">INV-00125</td>
+                                            <td class="px-6 py-4 text-gray-700">Northwind LLC</td>
+                                            <td class="px-6 py-4 text-gray-600">Jan 18, 2026</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-md bg-amber-50 px-2 py-1 text-xs font-medium text-amber-700"
+                                                >
+                                                    Pending
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right font-medium text-gray-900">$2,150.00</td>
+                                            <td class="px-6 py-4 text-right">
+                                                <button class="text-sm font-medium text-gray-600 hover:text-gray-900">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-gray-900">INV-00126</td>
+                                            <td class="px-6 py-4 text-gray-700">Globex Inc</td>
+                                            <td class="px-6 py-4 text-gray-600">Jan 22, 2026</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700"
+                                                >
+                                                    Overdue
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right font-medium text-gray-900">$980.00</td>
+                                            <td class="px-6 py-4 text-right">
+                                                <button class="text-sm font-medium text-gray-600 hover:text-gray-900">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                                <p class="text-sm text-gray-500">Showing 3 of 24 invoices</p>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="px-3 py-1.5 text-sm rounded-md border border-gray-200 text-gray-600 hover:bg-gray-50"
+                                    >
+                                        Previous
+                                    </button>
+                                    <button
+                                        class="px-3 py-1.5 text-sm rounded-md border border-gray-200 text-gray-600 hover:bg-gray-50"
+                                    >
+                                        Next
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section
@@ -369,15 +1105,59 @@
                     Tabs
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Tabs"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="flex gap-6 border-b">
-                    <span class="pb-2 border-b-2 border-gray-900 font-medium">Overview</span>
-                    <span class="pb-2 text-gray-500">Details</span>
-                    <span class="pb-2 text-gray-500">Settings</span>
+                <div class="flex">
+                    <div class="bg-white border border-gray-200 rounded-lg">
+                        <!-- Tabs -->
+                        <div class="border-b border-gray-200">
+                            <nav
+                                class="flex gap-6 px-6"
+                                aria-label="Tabs"
+                            >
+                                <button
+                                    class="py-4 text-sm font-medium text-gray-900 border-b-2 border-gray-900"
+                                    aria-current="page"
+                                >
+                                    Overview
+                                </button>
+
+                                <button
+                                    class="py-4 text-sm font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300"
+                                >
+                                    Transactions
+                                </button>
+
+                                <button
+                                    class="py-4 text-sm font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300"
+                                >
+                                    Invoices
+                                </button>
+
+                                <button
+                                    class="py-4 text-sm font-medium text-gray-400 cursor-not-allowed border-b-2 border-transparent"
+                                    disabled
+                                >
+                                    Settings
+                                </button>
+                            </nav>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="p-6">
+                            <h3 class="text-sm font-semibold text-gray-900 mb-2">
+                                Overview
+                            </h3>
+
+                            <p class="text-sm text-gray-600 leading-relaxed max-w-xl">
+                                This section provides a high-level summary of account activity, including
+                                recent performance metrics and current status.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -389,14 +1169,138 @@
                     Toast
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Toast"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="px-4 py-3 rounded bg-gray-900 text-white w-max">
-                    Action completed successfully
+                <div class="p-8 space-y-4 bg-white">
+
+                    <!-- Success Toast -->
+                    <div
+                        class="flex items-start justify-between gap-4 rounded-lg border border-green-200 bg-green-50 p-4">
+                        <div class="flex gap-3">
+                            <div class="mt-0.5 h-2 w-2 rounded-full bg-green-500"></div>
+                            <div>
+                                <p class="text-sm font-medium text-green-900">
+                                    Payment successful
+                                </p>
+                                <p class="mt-1 text-sm text-green-700">
+                                    The invoice has been marked as paid.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="text-green-700 hover:text-green-900">
+                            <svg
+                                class="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Info Toast -->
+                    <div
+                        class="flex items-start justify-between gap-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
+                        <div class="flex gap-3">
+                            <div class="mt-0.5 h-2 w-2 rounded-full bg-blue-500"></div>
+                            <div>
+                                <p class="text-sm font-medium text-blue-900">
+                                    New update available
+                                </p>
+                                <p class="mt-1 text-sm text-blue-700">
+                                    Refresh the page to apply the latest changes.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="text-blue-700 hover:text-blue-900">
+                            <svg
+                                class="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Error Toast -->
+                    <div class="flex items-start justify-between gap-4 rounded-lg border border-red-200 bg-red-50 p-4">
+                        <div class="flex gap-3">
+                            <div class="mt-0.5 h-2 w-2 rounded-full bg-red-500"></div>
+                            <div>
+                                <p class="text-sm font-medium text-red-900">
+                                    Payment failed
+                                </p>
+                                <p class="mt-1 text-sm text-red-700">
+                                    We were unable to process the transaction.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="text-red-700 hover:text-red-900">
+                            <svg
+                                class="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Danger Toast -->
+                    <div
+                        class="flex items-start justify-between gap-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+                        <div class="flex gap-3">
+                            <div class="mt-0.5 h-2 w-2 rounded-full bg-amber-500"></div>
+                            <div>
+                                <p class="text-sm font-medium text-amber-900">
+                                    Action required
+                                </p>
+                                <p class="mt-1 text-sm text-amber-700">
+                                    Your account is past due. Update billing details.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="text-amber-700 hover:text-amber-900">
+                            <svg
+                                class="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
                 </div>
+
             </section>
 
             <section
@@ -404,22 +1308,119 @@
                 class="space-y-4"
             >
                 <h2 class="text-2xl font-semibold">
-                    Input Field
+                    Input Fields
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Input Field"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <input
-                    class="w-full border rounded px-3 py-2"
-                    placeholder="Default input"
-                />
-                <input
-                    class="w-full border border-red-300 rounded px-3 py-2"
-                    placeholder="Error input"
-                />
+                <div class="p-8 bg-white">
+                    <div class="space-y-8">
+
+                        <!-- Section Header -->
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900">
+                                Input Fields
+                            </h2>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Examples of common form inputs used in a SaaS application.
+                            </p>
+                        </div>
+
+                        <!-- Card -->
+                        <div class="rounded-lg border border-gray-200 bg-white p-6 space-y-6">
+
+                            <!-- Text Input -->
+                            <div class="space-y-2">
+                                <label
+                                    for="company-name"
+                                    class="text-sm font-medium text-gray-700"
+                                >
+                                    Company Name
+                                </label>
+                                <input
+                                    id="company-name"
+                                    type="text"
+                                    placeholder="Acme Inc."
+                                    class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:outline-none focus:ring-0"
+                                />
+                                <p class="text-xs text-gray-500">
+                                    This will be displayed on invoices and receipts.
+                                </p>
+                            </div>
+
+                            <!-- Email Input -->
+                            <div class="space-y-2">
+                                <label
+                                    for="billing-email"
+                                    class="text-sm font-medium text-gray-700"
+                                >
+                                    Billing Email
+                                </label>
+                                <input
+                                    id="billing-email"
+                                    type="email"
+                                    placeholder="billing@acme.com"
+                                    class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:outline-none focus:ring-0"
+                                />
+                            </div>
+
+                            <!-- Select Input -->
+                            <div class="space-y-2">
+                                <label
+                                    for="plan"
+                                    class="text-sm font-medium text-gray-700"
+                                >
+                                    Subscription Plan
+                                </label>
+                                <select
+                                    id="plan"
+                                    class="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-gray-900 focus:outline-none focus:ring-0"
+                                >
+                                    <option>Starter</option>
+                                    <option>Professional</option>
+                                    <option>Enterprise</option>
+                                </select>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="space-y-2">
+                                <label
+                                    for="notes"
+                                    class="text-sm font-medium text-gray-700"
+                                >
+                                    Internal Notes
+                                </label>
+                                <textarea
+                                    id="notes"
+                                    rows="4"
+                                    placeholder="Add any relevant notes..."
+                                    class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:outline-none focus:ring-0"
+                                ></textarea>
+                            </div>
+
+                            <!-- Disabled Input -->
+                            <div class="space-y-2">
+                                <label
+                                    for="account-id"
+                                    class="text-sm font-medium text-gray-700"
+                                >
+                                    Account ID
+                                </label>
+                                <input
+                                    id="account-id"
+                                    type="text"
+                                    value="ACC-92841"
+                                    disabled
+                                    class="w-full cursor-not-allowed rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-500"
+                                />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section
@@ -430,7 +1431,7 @@
                     Search Input
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Search Input"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -449,7 +1450,7 @@
                     Select
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Select"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -468,7 +1469,7 @@
                     Checkbox
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Checkbox"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -490,14 +1491,85 @@
                     Toggle
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Toggle"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
                 </h2>
-                <div class="w-10 h-6 rounded-full bg-gray-300 relative">
-                    <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5"></div>
+                <div class="flex gap-6 p-6">
+                    <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                        <input
+                            type="checkbox"
+                            class="peer sr-only"
+                        />
+                        <div
+                            class="peer h-7 w-12 rounded-full bg-slate-300 ring-offset-1 transition-colors duration-200 peer-checked:bg-indigo-600 peer-focus:ring-0 peer-focus:ring-indigo-500">
+                        </div>
+                        <span
+                            class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                        ></span>
+                        On
+                    </label>
+
+                    <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                        <input
+                            type="checkbox"
+                            class="peer sr-only"
+                            checked
+                        />
+                        <div
+                            class="peer h-7 w-12 rounded-full bg-slate-300 ring-offset-1 transition-colors duration-200 peer-checked:bg-indigo-600 peer-focus:ring-0 peer-focus:ring-indigo-500">
+                        </div>
+                        <span
+                            class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                        ></span>
+                        On
+                    </label>
+
+                    <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                        <input
+                            type="checkbox"
+                            class="peer sr-only"
+                            checked
+                        />
+                        <div
+                            class="peer h-7 w-12 rounded-full bg-slate-300 ring-offset-1 transition-colors duration-200 peer-checked:bg-green-600 peer-focus:ring-0 peer-focus:ring-green-500">
+                        </div>
+                        <span
+                            class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                        ></span>
+                        On
+                    </label>
+
+                    <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                        <input
+                            type="checkbox"
+                            class="peer sr-only"
+                            checked
+                        />
+                        <div
+                            class="peer h-7 w-12 rounded-full bg-red-600 ring-offset-1 transition-colors duration-200 peer-checked:bg-green-600 peer-focus:ring-0 peer-focus:ring-green-500">
+                        </div>
+                        <span
+                            class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                        ></span>
+                    </label>
+
+                    <label class="relative inline-flex cursor-pointer items-center gap-3 text-gray-900">
+                        <input
+                            type="checkbox"
+                            class="peer sr-only"
+                            checked
+                        />
+                        <div
+                            class="peer h-7 w-12 rounded-full bg-slate-300 ring-offset-1 transition-colors duration-200 peer-checked:bg-red-600 peer-focus:ring-0 peer-focus:ring-red-500">
+                        </div>
+                        <span
+                            class="dot absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-5"
+                        ></span>
+                    </label>
                 </div>
+
             </section>
 
             <section
@@ -508,7 +1580,7 @@
                     Headings
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Headings"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -526,7 +1598,7 @@
                     Text
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Text"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -544,7 +1616,7 @@
                     Lists
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Lists"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -563,7 +1635,7 @@
                     Blockquote
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20Blockquote"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -581,7 +1653,7 @@
                     HR
                     <a
                         class="text-sm font-normal text-blue-600 hover:text-blue-800 underline ml-2"
-                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent"
+                        href="https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent?prompt=Generate%20an%20example%20of%20HR"
                         target="_blank"
                         rel="noopener noreferrer"
                     >Generate a similar component with GPT</a>
@@ -592,11 +1664,22 @@
         </main>
     </div>
     <script>
+        window.temporaryChat = window?.temporaryChat ?? Boolean(Number(localStorage.getItem('gptTempPrompt') ?? 0));
+
+        const props = [
+            'temporary-chat=true',
+        ]
+
         const gptComponentBaseUrl =
             'https://chatgpt.com/g/g-698129b0b0cc819199a594175ca41da8-tailwindcss-v4-ui-agent';
 
+        const promptField = document.querySelector('[data-el-id="gpt-component-prompt"]');
+
         const openComponentPrompt = () => {
-            const promptField = document.getElementById('gpt-component-prompt');
+            if (!promptField) {
+                return;
+            }
+
             const promptValue = promptField?.value?.trim();
 
             if (!promptValue) {
@@ -604,9 +1687,47 @@
                 return;
             }
 
-            const url = `${gptComponentBaseUrl}?prompt=${encodeURIComponent(promptValue)}`;
+            const url = new URL(gptComponentBaseUrl);
+
+            url.searchParams.set('temporary-chat', window.temporaryChat ? 'true' : 'false');
+            // url.searchParams.set('prompt', encodeURIComponent(promptValue));
+            url.searchParams.set('prompt', promptValue);
+
+            window.temporaryChat
             window.open(url, '_blank', 'noopener');
         };
+
+        window.gptTempPromptCheckbox = document.querySelector('[data-el-id="gpt-temp-prompt"]');
+
+        function updateGptTempPromptCheckbox() {
+            if (window.gptTempPromptCheckbox) {
+                window.gptTempPromptCheckbox.checked = window.temporaryChat;
+            }
+        }
+
+        function toggleTemporaryChat() {
+            window.temporaryChat = !window.temporaryChat;
+            localStorage.setItem('gptTempPrompt', window.temporaryChat ? 1 : 0);
+
+            console.log('toggleTemporaryChat', window.temporaryChat);
+
+            updateGptTempPromptCheckbox()
+        }
+
+        function setExamplePrompt(prompt = '', append = false) {
+            if (!append) {
+                promptField.value = prompt;
+                return;
+            }
+
+            promptField.value += `\n${prompt}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            window.gptTempPromptCheckbox?.addEventListener('change', toggleTemporaryChat);
+
+            updateGptTempPromptCheckbox();
+        });
     </script>
 </body>
 
